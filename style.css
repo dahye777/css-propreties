@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#myId {
+  color: indigo;
+}
+
+div.container h1 {
+  color: slateblue;
+}
+
+h1 {
+  color: tomato !important;
+}
+
+/*
+특정성이라는 것은 css의 적용 우선순위를 말합니다
+선택자의 우선순위가 가장 높은 것은 ID선택자입니다
+아이디 선택자의 특정성 값은 1,0,0,0으로 계산된다고 볼 수 있습니다
+
+다음으로는 클래스, 속성, 가상클래스 선택자가 있습니다
+일반적으로는 셋 다 값은 동일하고 0,1,0,0으로 계산이 됩니다
+
+마지막으로 요소(태그)선택자, 가상요소 선택자가 있습니다
+가장 낮은 특정성을 가지며 0,0,1,0으로 계산됩니다
+
+0,0,0,1은 인라인으로 스타일을 적용하였을 때를 말합니다
+cf) css는 3가지의 방법으로 적용할 수 있습니다
+인라인 = html의 태그에 속성값으로 style="width:100px"이런 식의 css를 부여한 것을 말합니다
+internal = head태그 안에 style이라는 태그를 사용해서 html안에 적용되는 스타일을 의미합니다
+
+external = 스타일 시트를 만들어서 외부 파일로 style을 적용하는 것을 말합니다
+
+!important는 css규칙에 우선순위를 부여하는 키워드입니다
+남용하면 유지보수가 어렵습니다. 스타일 규칙이 있는데 그 관계가 복잡해지면서
+기존의 규칙들이 꼬여 유지보수가 오히려 어려워집니다 따라서 최종적으로 어쩔수 없는 경우에만
+사용해야합니다
+*/
+:root{
+  --main-color : aqua;
+  --sub-color : lightpink;
+}
+/*
+var함수
+:root는 문서의 최상위 요소를 가리키는 css의 선택자입니다
+이 위치에 선언된 변수들은 전역변수가 됩니다
+
+단점 : 미디어쿼리에서 사용할 수 없습니다
+브라우저의 호환성이 떨어집니다
+*/
+span{
+  background-color: var(--main-color);
+  color: var(--sub-color);
+}
